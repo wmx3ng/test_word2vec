@@ -18,7 +18,7 @@ def separate_line(line):
     if not line:
         return list()
 
-    line_2_lower = line.lower()
+    line_2_lower = line.strip().lower()
     line_no_punct = _r_punct.sub(' ', line_2_lower)
 
     return [w for w in line_no_punct.split(' ') if w]
