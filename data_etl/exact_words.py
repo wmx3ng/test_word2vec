@@ -14,7 +14,7 @@ import re
 _r_punct = re.compile(r'[{}]+'.format(re.escape(string.punctuation)))
 
 
-def sepatate_line(line):
+def separate_line(line):
     if not line:
         return list()
 
@@ -29,5 +29,5 @@ if __name__ == '__main__':
         lines = news_r.readlines()
         for line in lines:
             print("--------------------")
-            words = sepatate_line(line)
+            words = separate_line(line)
             print(words)
