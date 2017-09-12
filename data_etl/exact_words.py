@@ -9,17 +9,19 @@
 @Description: separator line to words. 1) upper to lower case. 2) convert punct to space. 3) separate line by space.
 """
 import string
+import re
+
+_r_punct = re.compile(r'[{}]+'.format(re.escape(string.punctuation)))
 
 
 def sepatate_line(line):
-    words = []
     if not line:
-        return words
+        return list()
 
-    line = line.lower()
-    line = line.replace(string.punctuation, ' ')
+    line_2_lower = line.lower()
+    line_no_punct = _r_punct.sub(' ', line_2_lower)
 
-    return line.split(' ')
+    return [w for w in line_no_punct.split(' ') if w]
 
 
 if __name__ == '__main__':
