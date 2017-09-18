@@ -1,2 +1,4 @@
 /.idea
 **/*.pyc
+**/text8*
+**/tsne.png
